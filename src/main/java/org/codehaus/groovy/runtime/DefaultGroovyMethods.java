@@ -977,7 +977,7 @@ public class DefaultGroovyMethods extends DefaultGroovyMethodsSupport {
      * @since 1.0
      */
     public static <T> List<T> asImmutable(List<T> self) {
-        return asUnmodifiable(new ArrayList<>(self));
+        return List.copyOf(self);
     }
 
     /**
@@ -1016,7 +1016,7 @@ public class DefaultGroovyMethods extends DefaultGroovyMethodsSupport {
      * @since 1.5.0
      */
     public static <T> Collection<T> asImmutable(Collection<T> self) {
-        return asUnmodifiable((Collection<T>) new ArrayList<>(self));
+        return List.copyOf(self);
     }
 
     //--------------------------------------------------------------------------
